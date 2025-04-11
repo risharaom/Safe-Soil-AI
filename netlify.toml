@@ -1,2 +1,15 @@
 [build.environment]
   YARN_ENABLE_IMMUTABLE_INSTALLS = "false"
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = """
+      default-src 'self' data:;
+      script-src 'self' 'unsafe-eval' https://cdn.jsdelivr.net https://unpkg.com;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      font-src * data: https://fonts.gstatic.com https://fonts.googleapis.com;
+      img-src 'self' data: blob:;
+      connect-src 'self';
+      object-src 'none';
+      frame-ancestors 'none';
+    """

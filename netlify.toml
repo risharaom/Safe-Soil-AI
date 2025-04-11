@@ -4,12 +4,12 @@
   for = "/*"
   [headers.values]
     Content-Security-Policy = """
-      default-src 'self' data:;
+      default-src 'self' data: 'unsafe-eval' 'unsafe-inline' https://cdn.jsdelivr.net https://unpkg.com;
       script-src * 'unsafe-eval' 'unsafe-inline' https://cdn.jsdelivr.net https://unpkg.com;
       style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
       font-src * data: https://fonts.gstatic.com https://fonts.googleapis.com;
       img-src 'self' data: blob:;
       connect-src 'self';
-      object-src 'none';
+      object-src 'self';
       frame-ancestors 'none';
     """
